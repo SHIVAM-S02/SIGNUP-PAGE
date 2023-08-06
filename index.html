@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Add your CSS styles here */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    height: 100vh;  
+    background: black;
+}
+.container{
+    background: rgb(15, 15, 15);
+    width: 350px;
+    height: 450px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    padding: 2em;
+}
+
+
+.heading{
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+.box {
+    margin: 0.2em 0;
+}
+.container .box p{
+    color: rgba(255, 255, 255, 0.781);
+}
+.container .box div{
+    position: relative;
+    width: 100%;
+    height: 40px;
+    margin: 0.5em 0;
+}
+.container .box input{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgb(19, 19, 19);
+    color: white;
+    border: none;
+    outline: none;
+    padding-left: 0.8em;
+    border-radius: 10px;
+    transition: all .4s
+}
+
+.container .box input:focus::placeholder{
+    color: white;
+}
+.container .box div::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 102%;
+    height: 105%;
+    border-radius: 10px;
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+}
+.loginBtn{
+    width: 102%;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    margin: 0.5em 0;
+    transform: translate(-1%);
+    cursor: pointer;
+    color: white;
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    transition: all .4s;
+}
+
+.loginBtn:hover{
+    transform: translate(-1%, 5%);
+    box-shadow: 0 0 10px #ff416d65;
+}
+.text{
+    font-size: 0.8em;
+    margin-top: 0.5em;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.623);
+}
+.text a{
+    color: rgba(255, 255, 255, 0.911);
+}
+
+        /* Additional styling for signup page */
+        .container {
+            height: 520px; /* Adjust container height to accommodate the additional field */
+        }
+
+        .box label {
+            margin-bottom: 0.2em;
+        }
+
+        .box select {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgb(19, 19, 19);
+            color: white;
+            border: none;
+            outline: none;
+            padding-left: 0.8em;
+            border-radius: 10px;
+            transition: all .4s;
+        }
+
+        .box select:focus::placeholder {
+            color: white;
+        }
+
+        .box select option {
+            background-color: rgb(19, 19, 19);
+        }
+
+        /* Additional styles for gender dropdown */
+        .box div {
+            position: relative;
+            width: 100%;
+            height: 40px;
+            margin: 0.5em 0;
+        }
+
+        .box .gender-select::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 102%;
+            height: 105%;
+            border-radius: 10px;
+            background: linear-gradient(to right, #ff416c, #ff4b2b);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p class="heading">Sign Up</p>
+        <div class="box">
+            <label for="name">Name</label>
+            <div>
+                <input type="text" name="name" id="name" placeholder="Enter Your Name">
+            </div>
+        </div>
+        <div class="box">
+            <label for="gender">Gender</label>
+            <div class="gender-select">
+                <select name="gender" id="gender">
+                    <option value="" disabled selected>Select Your Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+        </div>
+        <div class="box">
+            <label for="email">Email</label>
+            <div>
+                <input type="email" name="email" id="email" placeholder="Enter Your Email">
+            </div>
+        </div>
+        <div class="box">
+            <label for="password">Password</label>
+            <div>
+                <input type="password" name="password" id="password" placeholder="Enter Your Password">
+            </div>
+        </div> 
+        <button class="loginBtn" onclick="redirectToLoginPage()">Sign Up</button> 
+        <p class="text">Already have an account? <a href="login.html">Login</a></p>
+    </div>
+
+    <!-- JavaScript to handle the redirection -->
+    <script>
+        function redirectToLoginPage() {
+            window.location.href = "login.html";
+        }
+    </script>
+</body>
+</html>
